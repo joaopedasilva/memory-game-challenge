@@ -12,6 +12,9 @@ const red = document.querySelector('.red');
 const green = document.querySelector('.green');
 const yellow = document.querySelector('.yellow');
 
+const scoreField = document.querySelector('#score');
+const levelField = document.querySelector('#level');
+
 // Cria ordem aleatória de cores.
 let shuffleOrder = () => {
     let colorOrder = Math.floor(Math.random() * 4);
@@ -39,7 +42,7 @@ let lightColor = (element, number) => {
 let checkOrder = () => {
     for (let i in clickedOrder) {
         if (clickedOrder[i] != order[i]) {
-            lose();
+            gameOver();
             break;
         }
     }
@@ -76,7 +79,9 @@ let createColorElement = (color) => {
 // Função para próximo nível do jogo.
 let nextLevel = () => {
     score++;
+    scoreField.value = score;
     shuffleOrder();
+    levelField.value = order.length;
 };
 
 // Função para game over.
@@ -92,6 +97,7 @@ let gameOver = () => {
 let playGame = () => {
     alert("Bem vindo ao Genius! Iniciando novo jogo!");
     score = 0;
+    order = [];
 
     nextLevel();
 };

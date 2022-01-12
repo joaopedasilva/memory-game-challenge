@@ -1,5 +1,10 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     background-color: rgb(200, 255, 239);
 }
 
@@ -7,7 +12,7 @@ body {
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -22,6 +27,7 @@ body {
     border-radius: 100%;
     width: 700px;
     height: 700px;
+    margin: 0 6vw;
 }
 
 .blue {
@@ -50,4 +56,59 @@ body {
 
 .selected {
     opacity: 0.4;
+}
+
+.control-board {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 20%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.control-board button {
+    width: 80%;
+    height: 12vh;
+}
+
+.btn-play {
+    background-color: green;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-stop {
+    background-color: red;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+}
+
+.control-board .statistics {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.control-board .statistics div {
+    width: 40%;
+}
+
+.control-board .statistics p {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.control-board .statistics input {
+    height: 8vh;
+    width: 100%;
+    border: 2px solid grey;
+    border-radius: 4px;
 }
